@@ -1,6 +1,7 @@
 // Imports go first
 import { makePottery } from './PotteryWheel.js';
 import { firePottery } from './Kiln.js';
+import { toSellOrNotToSell, usePottery } from './PotteryCatalog.js';
 
 
 
@@ -28,7 +29,26 @@ potteryFired .forEach((pottery, index) => {
     console.log(`Pottery ${index + 1}:`, pottery);
 });
 // Determine which ones should be sold, and their price
+toSellOrNotToSell(mug);
+toSellOrNotToSell(bowl);
+toSellOrNotToSell(plate);
+toSellOrNotToSell(vase);
+toSellOrNotToSell(platter);
 
+const itemsToSell = usePottery();
+itemsToSell.forEach((pottery) => {
+    console.log("Pottery Item:");
+    console.log(`  Shape: ${pottery.shape}`);
+    console.log(`  Weight: ${pottery.weight}`);
+    console.log(`  Height: ${pottery.height}`);
+    console.log(`  ID: ${pottery.id}`);
+    console.log(`  Fired: ${pottery.fired}`);
+    console.log(`  Cracked: ${pottery.cracked}`);
+   
+    console.log(`  Price: $${pottery.price}`);
+  
+    console.log("----------------------------");
+});
 
 // Invoke the component function that renders the HTML list
 
