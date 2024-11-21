@@ -12,5 +12,5 @@ export const toSellOrNotToSell = (pottery)=>{
     return pottery;
 }
 export const usePottery = () => {
-    return [...potteryToBeSold]; // make a shallow copy
+    return structuredClone(potteryToBeSold); // Make a deep copy
 };

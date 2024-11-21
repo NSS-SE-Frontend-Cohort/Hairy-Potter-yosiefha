@@ -26,15 +26,14 @@ const potteryFired = [
     firePottery(platter, 2100),
    
 ];
+
+// Determine which ones should be sold, and their price
 potteryFired .forEach((pottery, index) => {
     console.log(`Pottery ${index + 1}:`, pottery);
+    toSellOrNotToSell(pottery);
 });
-// Determine which ones should be sold, and their price
-toSellOrNotToSell(mug);
-toSellOrNotToSell(bowl);
-toSellOrNotToSell(plate);
-toSellOrNotToSell(vase);
-toSellOrNotToSell(platter);
+
+
 
 const itemsToSell = usePottery();
 itemsToSell.forEach((pottery) => {
